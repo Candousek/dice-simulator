@@ -67,4 +67,4 @@ while True:
             roll = randint(1, 6)
             data[roll] += 1
             data["total"] += 1
-            print(f"{SIDES[roll]}Your rolled {roll}!")
+            print(f"{SIDES[roll]}You rolled {roll}!")
