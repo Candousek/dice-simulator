@@ -55,15 +55,16 @@ while True:
     [Enter] Roll
     >> Your choice: """).lower()
 
-    if decision == "b":
-        break
-    elif decision == "s":
-        result = "\n>> Showing statistics:\n"
-        for key in data:
-            result += f"You rolled {key}: {data[key]} time{'s' if data[key] != 1 else ''} ({getPercentage(data, key)})\n"
-        print(result)
-    else:
-        roll = randint(1, 6)
-        data[roll] += 1
-        data["total"] += 1
-        print(f"{SIDES[roll]}Your rolled {roll}!")
+    match decision:
+        case "b":
+            break
+        case "s":
+            result = "\n>> Showing statistics:\n"
+            for key in data:
+                result += f"You rolled {key}: {data[key]} time{'s' if data[key] != 1 else ''} ({getPercentage(data, key)})\n"
+            print(result)            
+        case _:
+            roll = randint(1, 6)
+            data[roll] += 1
+            data["total"] += 1
+            print(f"{SIDES[roll]}Your rolled {roll}!")
